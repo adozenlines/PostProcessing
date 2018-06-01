@@ -4,13 +4,46 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Indev]
+## [2.0.7-preview]
+
+### Fixed
+- Post-processing wasn't working on Unity 2018.3.
+
+### Added
+- Bloom now comes with a **Clamp** parameter to limit the amount of bloom that comes with ultra-bright pixels.
+
+## [2.0.6-preview]
+
+### Fixed
+- On large scenes, the first object you'd add to a profile could throw a `NullReferenceException`. ([#530](https://github.com/Unity-Technologies/PostProcessing/pull/530))
+- Dithering now works correctly in dark areas when working in Gamma mode.
+- Colored grain wasn't colored when `POSTFX_DEBUG_STATIC_GRAIN` was set.
+- No more warning in the console when `POSTFX_DEBUG_STATIC_GRAIN` is set.
+
+### Changed
+- Minor scripting API improvements. ([#530](https://github.com/Unity-Technologies/PostProcessing/pull/530))
+- More implicit casts for `VectorXParameter` and `ColorParameter` to `Vector2`, `Vector3` and `Vector4`.
+- Script-instantiated profiles in volumes are now properly supported in the inspector. ([#530](https://github.com/Unity-Technologies/PostProcessing/pull/530))
+- Improved volume UI & styling.
+
+## [2.0.5-preview]
+
+### Fixed
+- More XR/Switch related fixes.
+
+## [2.0.4-preview]
 
 ### Fixed
 - Temporal Anti-aliasing creating NaN values in some cases. ([#337](https://github.com/Unity-Technologies/PostProcessing/issues/337))
 - Auto-exposure has been fixed to work the same way it did before the full-compute port.
 - XR compilation errors on Xbox One & Switch (2018.2).
 - `ArgumentNullException` when attempting to get a property sheet for a null shader. ([#515](https://github.com/Unity-Technologies/PostProcessing/pull/515))
+- Stop NaN Propagation not working for opaque-only effects.
+- HDR color grading had a slight color temperature offset.
+- PSVita compatibility.
+- Tizen warning on 2018.2.
+- Errors in the console when toggling lighting on/off in the scene view when working in Deferred.
+- Debug monitors now work properly with HDRP.
 
 ### Added
 - Contribution slider for the LDR Lut.
